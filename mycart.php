@@ -82,6 +82,15 @@
 					echo $v['name'].": ".$v['price']." * ".$v['quantity']." = $".($v['price'] * $v['quantity'])."\n";
 					$total += $v['price'] * $v['quantity'];
 					?>
+					<form action="cart_modif.php" method="POST">
+						<div><input type="hidden" name="name" value="<?php echo $v['name']?>" />
+						Change Quantity: <input type="number" name="quantity" value="<?PHP echo $v['quantity']?>" /><br />
+						<div><input type="submit" name="submit" value="modify"/></div>
+					</form>
+					<form action="cart_del.php" method="POST">
+						<div><input type="hidden" name="name" value="<?php echo $v['name']?>" />
+						<div><input type="submit" name="submit" value="delete"/></div>
+					</form>
 				</div>
 				<?php
 						}

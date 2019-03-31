@@ -122,21 +122,11 @@
 		<H1 class="subj">Please enter the product.</H1><br /><br><br><br>
 		<form action="enter_product_create.php" method="POST" class="login">
 			<div class="row">
-<<<<<<< HEAD
 				<div class="column left">Item Name:</div>
 				<div class="column"><input type="text" name="name" value="" required placeholder="Item Name"/><br /></div>
 				<div class="column left">Price:</div>
 				<div class="column"><input type="number" name="price" value="" required placeholder="$"/><br /></div>
 				<div class="column left">Category:</div>
-=======
-				<div class="column left">Item Name: <br></div>
-				<div class="column"><input type="text" name="name" value="" required placeholder="Item Name"/><br /><br></div>
-				<div class="column left">Price: <br></div>
-				<div class="column"><input type="number" name="price" value="" required placeholder="$"/><br /><br></div>
-				<div class="column left">Quantity: <br></div>
-				<div class="column"><input type="number" name="quantity" value="" required placeholder="Quantity"/><br /><br></div>
-				<div class="column left">Category: <br></div>
->>>>>>> 75ce9067022e75f8b2c6d5adb76b43feb2bc6ea8
 				<div class="column">
 					<select name="category" class="select">
 						<option value="men">Men</option>
