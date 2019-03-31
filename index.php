@@ -98,11 +98,13 @@
 							}
 						?>
 						<b>$<?php echo $val['price']?></b>
+						<?php if ($_SESSION['loggued_on_user']) { ?>
 						<form action="cart.php" method="POST">
 							<div><input type="hidden" name="name" value="<?php echo $val['name']?>" />
 							<div>Quantity: <input type="number" name="quantity" value="" required placeholder="Enter Quantity"/><br /></div>
 							<div><input type="submit" name="submit" value="Add to cart"/></div>
 						</form>
+						<?php } ?>
 					</div>
 					<?php
 				}
