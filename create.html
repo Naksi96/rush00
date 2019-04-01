@@ -18,7 +18,7 @@
 			}
 			.logbtn {
 				margin-top: 1px;
-				width: 330px;
+				width: 131px;
 			}
 			.box {
 				position: relative;
@@ -28,6 +28,23 @@
 				border-radius: 10px;
 				background-color: grey;
 				box-shadow: 0px 14px 29px 2px rgba(0,0,0,0.75);
+			}
+			.row {
+				display: inline;
+				min-width: 300px;
+			}
+			.row:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+			.column {
+				width: 20%;
+				min-width: 120px;
+				float: left;
+			}
+			.left {
+				margin-left: 30%;
 			}
 			.tit {
 				text-decoration: underline;
@@ -42,12 +59,21 @@
 		<div class="box">
 		<H1 class="tit">Welcome new user!</H1>
 		<form action="create.php" method="POST" class="login">
-			Please enter the Username: <input type="text" name="login" value="" required placeholder="Username"/>
-			<br /><br>
-			Please enter the Password: <input class="pw" type="password" name="passwd" value="" required placeholder="Password"/>
-			<br /><br>
+			<div class="row">
+				<div class="column left">Username:</div>
+				<div class="column"><input type="text" name="login" value="" required placeholder="Username"/><br /></div>
+				<div class="column left">Password:</div>
+				<div class="column"><input type="password" name="passwd" value="" required placeholder="Old Password"/><br /></div>
+				<div class="column left">E-mail:</div>
+				<div class="column"><input type="text" name="email" value="" required placeholder="E-mail address"/><br /></div>
+				<div class="column left">Phone #:</div>
+				<div class="column"><input type="text" name="phone" value="" required placeholder="Phone #"/><br /></div>
+				<div class="column left">Address:</div>
+				<div class="column"><input type="text" name="address" value="" required placeholder="Address"/><br /></div>
+				<div class="column left"><br /></div>
+				<div class="column"><input type="submit" name="submit" value="OK" class="logbtn"/></div>
+			</div>
 			<div class="g-recaptcha" data-sitekey="6LexGJsUAAAAADebmWuYAZ0kUhn7w0eOaElilEs-" data-theme="dark"></div><br>
-			<input type="submit" name="submit" value="OK" class="logbtn"/>
 		</form>
 		<script src='https://www.google.com/recaptcha/api.js'></script>
 		</div>

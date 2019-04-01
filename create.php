@@ -25,6 +25,9 @@
 		{
 			$new_acc['login'] = $_POST['login'];
 			$new_acc['passwd'] = hash("whirlpool", $_POST['passwd']);
+			$new_acc['email'] = $_POST['email'];
+			$new_acc['phone'] = $_POST['phone'];
+			$new_acc['address'] = $_POST['address'];
 			$acc_info[] = $new_acc;
 			file_put_contents("../private/passwd", serialize($acc_info));
 			echo "OK\n";

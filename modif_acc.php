@@ -64,7 +64,7 @@
         </div>
         <div class="acc_info">
             <h2 class="tit">Account Information</h2><br />
-			User ID: <b><?php echo $_SESSION['loggued_on_user']?></b><br /><br>
+			<div>User ID: <b><?php echo $_SESSION['loggued_on_user']?></b><br /><br></div>
 			<?php
 				$acc_info = unserialize(file_get_contents("../private/passwd"));
 				foreach ($acc_info as $acc=>$usr)
@@ -72,30 +72,16 @@
 					if (($usr['login'] === $_SESSION['loggued_on_user']))
 					{
 						?>
-							E-mail: <b><?php echo $usr['email']?></b><br /><br>
-							Phone #: <b><?php echo $usr['phone']?></b><br /><br>
-							Address: <b><?php echo $usr['address']?></b><br /><br>
+							<form action="modif_info.php" method="POST" class="login">
+								<div>E-mail: <input type="text" name="email" value="<?php echo $usr['email']?>" /><br /></div>
+								<div>Phone: <input type="text" name="phone" value="<?php echo $usr['phone']?>" /><br /></div>
+								<div>Address: <input type="text" name="address" value="<?php echo $usr['address']?>" /><br /></div>
+								<div class="column"><input type="submit" name="submit" value="OK"/></div>
+							</form>
 						<?php
 					}
 				}
 			?>
-            <?php
-                require_once('auth.php');
-                if (ad_auth($_SESSION['loggued_on_user']))
-                {
-                    ?>
-                    <b>Already an admin</b><br /><br>
-                    <?php
-                } else
-                {
-                    ?>
-                    <a href="create_admin.php"><button>Request an admin access</button></a><br /><br>
-                    <?php
-                }
-			?>
-			<a href="modif_acc.php"><button>Modify information</button></a><br /><br>
-            <a href="modif.html"><button>Change Password</button></a><br /><br>
-			<a href="delete.html"><button>Delete an Account</button></a><br /><br>
         </div>
 	</body>
 </html>
